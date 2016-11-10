@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="news" namespace="/news" extends="struts-default">
+
+        <action name="list" class="com.epam.ok.action.news.GetAllNewsAction">
+            <result name="success">pages/newsList.jsp</result>
+        </action>
+
+        <action name="view" class="com.epam.ok.action.news.GetNewsAction">
+            <result name="success">pages/viewNews.jsp</result>
+        </action>
+
+        <action name="edit" class="com.epam.ok.action.news.GetNewsAction">
+            <result name="success">pages/editNews.jsp</result>
+        </action>
+        <action name="saveNews" class="com.epam.ok.action.news.SaveNewsAction">
+            <result name="success" type="redirectAction">
+                <param name="newsId">${newsId}</param>
+                <param name="actionName">view</param>
+            </result>
+        </action>
+        <action name="deleteNews" class="com.epam.ok.action.news.DeleteNewsAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">list</param>
+            </result>
+        </action>
+
+        <action name="deleteComment" class="com.epam.ok.action.comment.DeleteCommentAction">
+            <result name="success" type="redirectAction">
+                <param name="newsId">${newsId}</param>
+                <param name="actionName">view</param>
+            </result>
+        </action>
+
+        <action name="editComment" class="com.epam.ok.action.comment.GetCommentAction">
+            <result name="success">pages/editComment.jsp</result>
+        </action>
+        <action name="saveComment" class="com.epam.ok.action.comment.SaveCommentAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">view</param>
+                <param name="newsId">${newsId}</param>
+            </result>
+        </action>
+
+    </package>
+
+    <!--<constant name="struts.objectFactory.cdi.jndiKey" value="java:comp/some/weird/BeanManagerReference" />-->
+
+</struts>
