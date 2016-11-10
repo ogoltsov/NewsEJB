@@ -6,6 +6,10 @@
 
     <display-name>Struts 2 Web Application</display-name>
 
+    <listener>
+        <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+    </listener>
+
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>

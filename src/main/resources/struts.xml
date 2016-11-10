@@ -8,16 +8,20 @@
 
     <package name="news" namespace="/news" extends="struts-default">
 
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+
         <action name="list" class="com.epam.ok.action.news.GetAllNewsAction">
-            <result name="success">pages/newsList.jsp</result>
+            <result name="success" type="tiles">listNews</result>
         </action>
 
         <action name="view" class="com.epam.ok.action.news.GetNewsAction">
-            <result name="success">pages/viewNews.jsp</result>
+            <result name="success" type="tiles">viewNews</result>
         </action>
 
         <action name="edit" class="com.epam.ok.action.news.GetNewsAction">
-            <result name="success">pages/editNews.jsp</result>
+            <result name="success" type="tiles">editNews</result>
         </action>
         <action name="saveNews" class="com.epam.ok.action.news.SaveNewsAction">
             <result name="success" type="redirectAction">
@@ -39,8 +43,9 @@
         </action>
 
         <action name="editComment" class="com.epam.ok.action.comment.GetCommentAction">
-            <result name="success">pages/editComment.jsp</result>
+            <result name="success" type="tiles">editComment</result>
         </action>
+
         <action name="saveComment" class="com.epam.ok.action.comment.SaveCommentAction">
             <result name="success" type="redirectAction">
                 <param name="actionName">view</param>
@@ -49,7 +54,4 @@
         </action>
 
     </package>
-
-    <!--<constant name="struts.objectFactory.cdi.jndiKey" value="java:comp/some/weird/BeanManagerReference" />-->
-
 </struts>

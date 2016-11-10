@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+    <definition name="baseLayout" template="/news/layout.jsp">
+        <put-attribute name="title" value="Template" cascade="true"/>
+        <put-attribute name="menu" value="/news/pages/menu.jsp"/>
+        <put-attribute name="header" value="Template" cascade="true"/>
+        <put-attribute name="workspace" value="Template" cascade="true"/>
+
+    </definition>
+
+    <definition name="listNews" extends="baseLayout">
+        <put-attribute name="workspace" value="/news/pages/newsList.jsp"/>
+    </definition>
+
+    <definition name="viewNews" extends="baseLayout">
+        <put-attribute name="workspace" value="/news/pages/viewNews.jsp"/>
+    </definition>
+
+    <definition name="editNews" extends="baseLayout">
+        <put-attribute name="workspace" value="/news/pages/editNews.jsp"/>
+    </definition>
+
+    <definition name="editComment" extends="baseLayout">
+        <put-attribute name="workspace" value="/news/pages/editComment.jsp"/>
+    </definition>
+
+
+</tiles-definitions>
