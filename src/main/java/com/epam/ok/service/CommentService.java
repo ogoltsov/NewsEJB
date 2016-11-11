@@ -24,9 +24,8 @@ public class CommentService implements Service<Comment> {
         try {
             return repository.save(comment);
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
-        return null;
     }
 
     @Override

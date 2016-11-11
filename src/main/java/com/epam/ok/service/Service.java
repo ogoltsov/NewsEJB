@@ -4,7 +4,6 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 import java.util.List;
 
-@Stateless
 @Local
 public interface Service<T> {
 

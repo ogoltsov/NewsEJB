@@ -35,8 +35,9 @@ public class GetAllNewsAction extends ActionSupport {
         try {
             newsList = service.findAll();
         } catch (ServiceException e) {
-
+            logger.error("Can't get newsList from DB");
         }
+
     }
 
     public List<News> getNewsList() {
