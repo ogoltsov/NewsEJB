@@ -24,6 +24,12 @@ public class SaveNewsAction extends ActionSupport {
         return SUCCESS;
     }
 
+    @Override
+    public void validate() {
+
+
+    }
+
     public News getNews() {
         return news;
     }

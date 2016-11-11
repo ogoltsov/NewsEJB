@@ -25,6 +25,13 @@ public class DeleteNewsAction extends ActionSupport {
         return SUCCESS;
     }
 
+    @Override
+    public void validate() {
+        if ((newsId == null) || (newsId.length == 0)) {
+            addActionError("Select items for delete");
+        }
+    }
+
     public Integer[] getNewsId() {
         return newsId;
     }

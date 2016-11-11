@@ -16,8 +16,6 @@ public class SaveCommentAction extends ActionSupport {
     @Inject
     private Service<News> newsService;
 
-
-
     private Integer newsId;
     private Comment comment;
 
@@ -28,6 +26,13 @@ public class SaveCommentAction extends ActionSupport {
         comment.setNews(news);
         commentService.save(comment);
         return SUCCESS;
+    }
+
+    @Override
+    public void validate() {
+        if (comment.getMessage().length()>200){
+            addActionError("Comment must be shorter than 200 characters");
+        }
     }
 
     public Integer getNewsId() {

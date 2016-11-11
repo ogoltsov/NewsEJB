@@ -13,10 +13,30 @@
 <div class="menu">
     <div class="link">
         <s:url action="list" var="aList"/>
-        <s:a href="%{aList}">List News</s:a>
+        <s:a href="%{aList}">
+            <s:text name="page.menu.listNews"/>
+        </s:a>
     </div>
     <div class="link">
         <s:url action="edit" var="aNewNews"/>
-        <s:a href="%{aNewNews}">Add News</s:a>
+        <s:a href="%{aNewNews}">
+            <s:text name="page.menu.addNews"/>
+        </s:a>
+    </div>
+    <div class="link">
+        <s:url id="localeEN" namespace="/" action="locale" >
+            <s:param name="request_locale" >en</s:param>
+        </s:url>
+        <s:a href="%{localeEN}">
+            <s:text name="page.menu.lang.en"/>
+        </s:a>
+    </div>
+    <div class="link">
+        <s:url id="localeRU" namespace="/" action="locale" >
+            <s:param name="request_locale" >ru</s:param>
+        </s:url>
+        <s:a href="%{localeRU}">
+            <s:text name="page.menu.lang.ru"/>
+        </s:a>
     </div>
 </div>

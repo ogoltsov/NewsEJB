@@ -1,5 +1,5 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<%@ taglib prefix="sx" uri="/struts-dojo-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
 <!DOCTYPE html>
@@ -15,18 +15,17 @@
     <sx:head />
 </head>
 <style>
-    div {
-        /*border: 1px solid black;*/
+    .header {
+        padding-top: 15px;
     }
 </style>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">
-            <h1>News portal</h1>
-        </div>
-        <div class="col-sm-10 col-md-10 col-lg-10">
-            <h1>BUTTONS</h1>
+    <div class="row header">
+        <div class="col-sm-5 col-md-5 col-lg-5">
+            <h1>
+                <s:text name="page.main.newsPortal.title" />
+            </h1>
         </div>
     </div>
 </div>

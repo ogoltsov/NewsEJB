@@ -5,6 +5,7 @@
 
 <struts>
     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="global"/>
 
     <package name="news" namespace="/news" extends="struts-default">
 
@@ -14,6 +15,8 @@
 
         <action name="list" class="com.epam.ok.action.news.GetAllNewsAction">
             <result name="success" type="tiles">listNews</result>
+            <result name="input" type="tiles">listNews</result>
+
         </action>
 
         <action name="view" class="com.epam.ok.action.news.GetNewsAction">
@@ -33,6 +36,10 @@
             <result name="success" type="redirectAction">
                 <param name="actionName">list</param>
             </result>
+            <result name="input" type="redirectAction">
+                <param name="actionName">list</param>
+                <param name="actionErrors">${actionErrors}</param>
+            </result>
         </action>
 
         <action name="deleteComment" class="com.epam.ok.action.comment.DeleteCommentAction">
@@ -51,7 +58,16 @@
                 <param name="actionName">view</param>
                 <param name="newsId">${newsId}</param>
             </result>
+            <result name="input" type="tiles">editComment</result>
         </action>
 
+    </package>
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="locale" class="com.epam.ok.action.LocaleAction">
+            <result name="success" type="redirectAction">
+                <param name="namespace">news</param>
+                <param name="actionName">list</param>
+            </result>
+        </action>
     </package>
 </struts>
