@@ -4,6 +4,7 @@ import com.epam.ok.model.News;
 import com.epam.ok.service.Service;
 import com.epam.ok.service.ServiceException;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.log4j.Logger;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 public class GetAllNewsAction extends ActionSupport {
 
     private static final long serialVersionUID = -4621649599573151569L;
+    private static final Logger logger = Logger.getLogger(GetAllNewsAction.class);
 
     @Inject
     private Service<News> service;
@@ -21,6 +23,7 @@ public class GetAllNewsAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
+        logger.info("Get All News execute");
         newsList = service.findAll();
         if ((newsList == null) || (newsList.size() == 0))
             return NONE;

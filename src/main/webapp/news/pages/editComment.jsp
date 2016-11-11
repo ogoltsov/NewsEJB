@@ -6,7 +6,10 @@
 </head>
 <body>
 <s:form theme="simple">
-    <s:textfield name="comment.id" label="ID" value="%{comment.id}" />
+    <label for="id">
+        <s:text name="page.newsList.id" />
+    </label>
+    <s:textfield id="id" name="comment.id" label="ID" value="%{comment.id}" />
     <s:hidden name="commentId" value="%{comment.id}"/>
     <s:hidden name="newsId" value="%{newsId}"/>
     <div class="error">
@@ -14,12 +17,10 @@
             <s:actionerror/>
         </s:if>
     </div>
-
-    <div class="form-group">
-
-    </div>
-
-    <s:textarea name="comment.message" label="Brief" value="%{comment.message}" rows="5" cols="50" cssClass="form-control"/>
+<label for="message">
+    Message
+</label>
+    <s:textarea id="message" name="comment.message" label="Brief" value="%{comment.message}" rows="5" cols="50" cssClass="form-control"/>
     <s:textfield name="comment.date" label="date" value="%{comment.date}" cssClass="form-control" />
 
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 offset-xs-9 offset-sm-9 offset-md-9 offset-lg-9">
