@@ -31,11 +31,11 @@ public class DeleteNewsAction extends ActionSupport {
 
     @Override
     public void validate() {
-
         if ((newsId == null) || (newsId.length == 0)) {
             logger.info("DeleteNews validation failed");
             addActionError("Select items for delete");
         }
+        //</editor-fold>
     }
 
     public Integer[] getNewsId() {
