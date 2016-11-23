@@ -1,9 +1,11 @@
 package com.epam.ok.ws;
 
 
-
+import com.epam.ok.model.News;
 import com.epam.ok.model.Person;
+import com.epam.ok.service.Service;
 
+import javax.inject.Inject;
 import javax.jws.WebService;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,11 +17,14 @@ public class PersonServiceImpl implements PersonService {
 
     private static Map<Integer, Person> persons = new HashMap<Integer, Person>();
 
+    @Inject
+    private Service<News> newsService;
+
     @Override
     public boolean addPerson(Person p) {
-        if (persons.get(p.getId())!=null){
+        if (persons.get(p.getId()) != null) {
             return false;
-        }else {
+        } else {
             persons.put(p.getId(), p);
             return true;
         }
@@ -27,7 +32,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public boolean deletePerson(int id) {
-        if (getPerson(id)!=null) {
+        if (getPerson(id) != null) {
             persons.remove(getPerson(id));
             return true;
         } else {
@@ -37,7 +42,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person getPerson(int id) {
-        if (persons.get(id)!=null) {
+        if (persons.get(id) != null) {
             return persons.get(id);
         } else {
             return null;
@@ -48,8 +53,8 @@ public class PersonServiceImpl implements PersonService {
     public Person[] getAllPersons() {
         Set<Integer> ids = persons.keySet();
         Person[] p = new Person[ids.size()];
-        int i=0;
-        for(Integer id : ids){
+        int i = 0;
+        for (Integer id : ids) {
             p[i] = persons.get(id);
             i++;
         }

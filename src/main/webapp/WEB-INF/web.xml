@@ -7,8 +7,14 @@
     <display-name>Struts 2 Web Application</display-name>
 
     <listener>
+        <listener-class>
+            com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+        </listener-class>
+    </listener>
+    <listener>
         <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
     </listener>
+
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>
@@ -20,12 +26,6 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/news/*</url-pattern>
     </filter-mapping>
-
-    <listener>
-        <listener-class>
-            com.sun.xml.ws.transport.http.servlet.WSServletContextListener
-        </listener-class>
-    </listener>
 
     <servlet>
         <servlet-name>JAXWSServlet</servlet-name>
