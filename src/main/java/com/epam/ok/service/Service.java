@@ -1,10 +1,9 @@
 package com.epam.ok.service;
 
-import javax.ejb.Local;
+import java.io.Serializable;
 import java.util.List;
 
-@Local
-public interface Service<T> {
+public interface Service<T> extends Serializable {
 
     List<T> findAll() throws ServiceException;
 

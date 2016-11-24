@@ -34,7 +34,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>JAXWSServlet</servlet-name>
-        <url-pattern>/personWS</url-pattern>
+        <url-pattern>/newsSoap</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

@@ -78,9 +78,7 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
-
-    </dependencies>
+            </dependencies>
 
     <build>
         <finalName>app</finalName>
@@ -91,15 +89,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxws-maven-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <useJdkToolchainExecutable>true</useJdkToolchainExecutable>
                 </configuration>
             </plugin>
 

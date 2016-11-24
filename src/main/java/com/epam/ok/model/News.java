@@ -1,6 +1,8 @@
 package com.epam.ok.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Date;
 import java.util.List;
 
@@ -11,12 +13,13 @@ import java.util.List;
         @NamedQuery(name = "News.getById", query = "SELECT o FROM News o JOIN FETCH o.comments where o.id = :id")
 }
 )
-
+@XmlRootElement
 public class News extends BaseEntity {
 
     private static final long serialVersionUID = 6339231771359590828L;
 
     @Column(name = "title")
+    @XmlAttribute(name = "title")
     private String title;
 
     @Column(name = "brief")
