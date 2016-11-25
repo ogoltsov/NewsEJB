@@ -14,8 +14,9 @@ public class CommentRepository implements Repository<Comment> {
     private EntityManager em;
 
     @Override
+    @Deprecated
     public List<Comment> findAll() throws RepositoryException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override

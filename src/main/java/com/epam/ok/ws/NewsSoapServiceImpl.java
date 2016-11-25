@@ -21,23 +21,35 @@ public class NewsSoapServiceImpl implements NewsSoapService {
     @Inject
     private Service<News> service;
 
-    @Override
-    public List<News> getAll() throws ServiceException {
-        return service.findAll();
+    public void setService(Service<News> service) {
+        this.service = service;
     }
 
     @Override
-    public News getById(int id) {
+    public News[] getAll() throws ServiceException {
+        List<News> newsList = service.findAll();
+        News[] news = new News[newsList.size()];
+
+        for (int i = 0; i < news.length; i++) {
+
+        }
         return null;
     }
 
     @Override
-    public boolean delete(int id) {
-        return false;
+    public News getById(int id) throws ServiceException {
+        return service.find(id);
     }
 
     @Override
-    public boolean add(News news) {
-        return false;
+    public boolean delete(int id) {
+        return delete(id);
+    }
+
+    @Override
+    public boolean add(News news) throws ServiceException {
+        News savedNews = service.save(news);
+        return savedNews.equals(service.find(savedNews.getId()));
+
     }
 }

@@ -11,15 +11,13 @@ import java.util.List;
 @NamedQueries(value = {
         @NamedQuery(name = "News.getAll", query = "SELECT e from News e"),
         @NamedQuery(name = "News.getById", query = "SELECT o FROM News o JOIN FETCH o.comments where o.id = :id")
-}
-)
+})
 @XmlRootElement
 public class News extends BaseEntity {
 
     private static final long serialVersionUID = 6339231771359590828L;
 
     @Column(name = "title")
-    @XmlAttribute(name = "title")
     private String title;
 
     @Column(name = "brief")

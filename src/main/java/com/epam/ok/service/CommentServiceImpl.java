@@ -15,8 +15,9 @@ public class CommentServiceImpl implements CommentService {
     private Repository<Comment> repository;
 
     @Override
+    @Deprecated
     public List<Comment> findAll() throws ServiceException {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -35,7 +36,7 @@ public class CommentServiceImpl implements CommentService {
             comment.setNews(null);
             repository.remove(comment);
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
     }
 
@@ -44,8 +45,7 @@ public class CommentServiceImpl implements CommentService {
         try {
             return repository.findById(id);
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
-        return null;
     }
 }

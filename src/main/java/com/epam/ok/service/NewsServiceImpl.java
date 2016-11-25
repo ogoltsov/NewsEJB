@@ -19,9 +19,8 @@ public class NewsServiceImpl implements NewsService {
         try {
             return dao.findAll();
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
-        return null;
     }
 
     @Override
@@ -29,9 +28,8 @@ public class NewsServiceImpl implements NewsService {
         try {
             return dao.save(news);
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
-        return null;
     }
 
     @Override
@@ -39,7 +37,7 @@ public class NewsServiceImpl implements NewsService {
         try {
             dao.remove(find(id));
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
     }
 
@@ -48,8 +46,7 @@ public class NewsServiceImpl implements NewsService {
         try {
             return dao.findById(id);
         } catch (RepositoryException e) {
-
+            throw new ServiceException("", e);
         }
-        return null;
     }
 }

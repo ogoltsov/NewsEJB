@@ -23,7 +23,6 @@ public class NewsRepository implements Repository<News> {
     @Override
     @Transactional
     public News findById(int id) throws RepositoryException {
-//        return em.createNamedQuery("News.getById", News.class).setParameter("id", id).getResultList().get(0);
         return em.find(News.class, id);
     }
 

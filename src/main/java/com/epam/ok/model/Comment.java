@@ -16,7 +16,6 @@ public class Comment extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "news_id")
-
     private News news;
 
     public Comment() {
