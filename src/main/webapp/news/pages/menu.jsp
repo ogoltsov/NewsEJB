@@ -24,7 +24,7 @@
         </s:a>
     </div>
     <div class="link">
-        <s:url id="localeEN" namespace="/" action="locale" >
+        <s:url id="localeEN" namespace="/news" action="locale" >
             <s:param name="request_locale" >en</s:param>
         </s:url>
         <s:a href="%{localeEN}">
@@ -32,7 +32,7 @@
         </s:a>
     </div>
     <div class="link">
-        <s:url id="localeRU" namespace="/" action="locale" >
+        <s:url id="localeRU" namespace="/news" action="locale" >
             <s:param name="request_locale" >ru</s:param>
         </s:url>
         <s:a href="%{localeRU}">

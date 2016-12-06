@@ -71,6 +71,7 @@ public class News extends BaseEntity {
         this.date = date;
     }
 
+    @XmlTransient
     public List<Comment> getComments() {
         return comments;
     }

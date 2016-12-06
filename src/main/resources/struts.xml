@@ -60,9 +60,6 @@
             </result>
             <result name="input" type="tiles">editComment</result>
         </action>
-
-    </package>
-    <package name="default" namespace="/" extends="struts-default">
         <action name="locale" class="com.epam.ok.action.LocaleAction">
             <result name="success" type="redirectAction">
                 <param name="namespace">news</param>
@@ -70,4 +67,12 @@
             </result>
         </action>
     </package>
+    <!--<package name="default" namespace="/" extends="struts-default">-->
+        <!--<action name="locale" class="com.epam.ok.action.LocaleAction">-->
+            <!--<result name="success" type="redirectAction">-->
+                <!--<param name="namespace">news</param>-->
+                <!--<param name="actionName">list</param>-->
+            <!--</result>-->
+        <!--</action>-->
+    <!--</package>-->
 </struts>

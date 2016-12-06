@@ -6,10 +6,6 @@
 </head>
 <body>
 <s:form theme="simple">
-    <label for="id">
-        <s:text name="page.newsList.id" />
-    </label>
-    <s:textfield id="id" name="comment.id" label="ID" value="%{comment.id}" />
     <s:hidden name="commentId" value="%{comment.id}"/>
     <s:hidden name="newsId" value="%{newsId}"/>
     <div class="error">
