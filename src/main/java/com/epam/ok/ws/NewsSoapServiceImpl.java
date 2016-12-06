@@ -12,7 +12,7 @@ import java.util.List;
 
 @Stateless(name = "NewsService")
 @WebService(name = "NewsService",
-        portName = "NewsServicePort")
+        portName = "NewsServicePort",   targetNamespace = "https://epam.com.ok.ws/NewsSoapService")
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT,
         use = SOAPBinding.Use.LITERAL,
         parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
@@ -20,10 +20,6 @@ public class NewsSoapServiceImpl implements NewsSoapService {
 
     @Inject
     private Service<News> service;
-
-    public void setService(Service<News> service) {
-        this.service = service;
-    }
 
     @Override
     public News[] getAll() throws ServiceException {
