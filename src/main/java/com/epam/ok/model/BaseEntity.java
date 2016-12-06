@@ -1,6 +1,8 @@
 package com.epam.ok.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 
 @MappedSuperclass
@@ -10,11 +12,10 @@ public class BaseEntity implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false)
-//    @SequenceGenerator(name = "id_seq", sequenceName = "user_id_seq", allocationSize = 1)
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @XmlTransient
     public Integer getId() {
         return id;
     }

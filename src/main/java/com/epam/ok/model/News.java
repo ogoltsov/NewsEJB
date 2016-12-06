@@ -1,8 +1,7 @@
 package com.epam.ok.model;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +11,7 @@ import java.util.List;
         @NamedQuery(name = "News.getAll", query = "SELECT e from News e"),
         @NamedQuery(name = "News.getById", query = "SELECT o FROM News o JOIN FETCH o.comments where o.id = :id")
 })
+@XmlRootElement(name = "news")
 public class News extends BaseEntity {
 
     private static final long serialVersionUID = 6339231771359590828L;
@@ -35,6 +35,7 @@ public class News extends BaseEntity {
         this.date = new Date();
     }
 
+    @XmlElement(name = "title")
     public String getTitle() {
         return title;
     }
@@ -43,6 +44,7 @@ public class News extends BaseEntity {
         this.title = title;
     }
 
+    @XmlElement(name = "brief")
     public String getBrief() {
         return brief;
     }
@@ -51,6 +53,7 @@ public class News extends BaseEntity {
         this.brief = brief;
     }
 
+    @XmlElement(name = "content")
     public String getContent() {
         return content;
     }
@@ -59,6 +62,7 @@ public class News extends BaseEntity {
         this.content = content;
     }
 
+    @XmlElement(name = "date")
     public Date getDate() {
         return date;
     }

@@ -1,6 +1,7 @@
 package com.epam.ok.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.Date;
 
 @Entity
@@ -38,6 +39,7 @@ public class Comment extends BaseEntity {
         this.date = date;
     }
 
+    @XmlTransient
     public News getNews() {
         return news;
     }

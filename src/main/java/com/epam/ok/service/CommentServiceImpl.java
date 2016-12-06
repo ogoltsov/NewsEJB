@@ -3,6 +3,7 @@ package com.epam.ok.service;
 import com.epam.ok.dao.Repository;
 import com.epam.ok.dao.RepositoryException;
 import com.epam.ok.model.Comment;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

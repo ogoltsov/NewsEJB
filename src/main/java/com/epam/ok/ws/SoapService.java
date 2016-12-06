@@ -3,18 +3,35 @@ package com.epam.ok.ws;
 import com.epam.ok.model.News;
 import com.epam.ok.service.ServiceException;
 
+import javax.ejb.Local;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
+import java.util.List;
 
 @WebService
-//@Local
+@Local
 public interface SoapService<T> {
 
-    News[] getAll() throws ServiceException;
+    @WebMethod(operationName = "getAll")
+    @WebResult(name = "item")
+    @XmlElementWrapper(name = "List")
+    List<T> getAll() throws ServiceException;
 
-    News getById(int id) throws ServiceException;
+    @WebMethod(operationName = "getById")
+    @WebResult(name = "item")
+    News getById(@WebParam(name = "id") int id) throws ServiceException;
 
-    boolean delete(int id);
+    @WebMethod(operationName = "deleteById")
+    @WebResult(name = "isDeleted")
+    boolean delete(@WebParam(name = "id") int id) throws ServiceException;
 
-    boolean add(T t) throws ServiceException;
+    @WebMethod(operationName = "add")
+    @WebResult(name = "isAdded")
+    boolean add(@WebParam(name = "item")T t) throws ServiceException;
 
 }
