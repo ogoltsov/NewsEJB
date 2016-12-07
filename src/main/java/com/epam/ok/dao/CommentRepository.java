@@ -26,7 +26,7 @@ public class CommentRepository implements Repository<Comment> {
 
     @Override
     public Comment save(Comment comment) throws RepositoryException {
-        if (comment.getId() == null) {
+            if (comment.getId() == null) {
             em.persist(comment);
         } else {
             comment = em.merge(comment);

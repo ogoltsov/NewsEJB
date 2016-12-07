@@ -6,7 +6,6 @@ import com.epam.ok.service.ServiceException;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 import java.util.List;

@@ -16,18 +16,17 @@ public class SaveNewsAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-
         news = service.save(news);
         if (newsId == null)
             newsId = news.getId();
-
         return SUCCESS;
     }
 
     @Override
     public void validate() {
-
-
+        if (news.getTitle().length()>100) addActionError("Title must be shorter than 100 characters");
+        if (news.getBrief().length()>500) addActionError("Brief must be shorter than 500 characters");
+        if (news.getContent().length()>2048) addActionError("Content must be shorter than 2048 characters");
     }
 
     public News getNews() {

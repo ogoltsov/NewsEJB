@@ -21,7 +21,6 @@ public class SaveCommentAction extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        System.out.println("FUCL!");
         News news = newsService.find(newsId);
         comment.setNews(news);
         commentService.save(comment);

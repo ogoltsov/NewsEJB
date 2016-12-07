@@ -31,6 +31,9 @@
                 <param name="newsId">${newsId}</param>
                 <param name="actionName">view</param>
             </result>
+            <result name="input" type="tiles">
+                editNews
+            </result>
         </action>
         <action name="deleteNews" class="com.epam.ok.action.news.DeleteNewsAction">
             <result name="success" type="redirectAction">

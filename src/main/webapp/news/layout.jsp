@@ -18,6 +18,9 @@
     .header {
         padding-top: 15px;
     }
+    .menu {
+        position: static;
+    }
 </style>
 <body>
 <div class="container-fluid">
@@ -31,7 +34,7 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2 col-md-2 col-lg-2">
+        <div class="col-sm-2 col-md-2 col-lg-2 menu">
             <tiles:insertAttribute name="menu"/>
         </div>
         <div class="col-sm-10 col-md-10 col-lg-10">

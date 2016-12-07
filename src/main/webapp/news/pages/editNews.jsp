@@ -1,12 +1,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="sd" uri="/struts-dojo-tags" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 <s:form theme="simple">
-    <%--<s:textfield name="news.commentId" label="ID" value="%{news.commentId}" />--%>
     <s:hidden name="news.id" value="%{news.id}"/>
     <s:hidden name="newsId" value="%{news.id}"/>
     <div class="error">
@@ -14,20 +8,43 @@
             <s:actionerror/>
         </s:if>
     </div>
-
-    <div class="form-group">
-
+    <div class="form-group row">
+        <label for="title-text-input" class="col-xs-2 col-sm-2 col-md-1 col-lg-1 col-form-label">
+            <s:text name="page.main.newsPortal.title"/>
+        </label>
+        <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+            <s:textfield name="news.title" label="title" value="%{news.title}" rows="5" cols="50"
+                        cssClass="form-control" id="title-text-input"/>
+        </div>
     </div>
-
-    <s:textfield name="news.title" value="%{news.title}" size="100" maxLength="100"
-                 cssClass="form-control" label="Title"/>
-    <s:textarea name="news.brief" label="Brief" value="%{news.brief}" rows="5" cols="50" cssClass="form-control"/>
-    <s:textfield name="news.date" label="date" value="%{news.date}" cssClass="form-control" />
-
-    <%--<sd:datetimepicker label="Select From" name="news.date" displayFormat="MM-dd-yy" value="%{news.date}" cssClass="form-control"/>--%>
-
-    <s:textarea name="news.content" label="Content" value="%{news.content}" rows="10" cols="50"
-                cssClass="form-control"/>
+    <div class="form-group row">
+        <label for="brief-text-input" class="col-xs-2 col-sm-2 col-md-1 col-lg-1 col-form-label">
+            <s:text name="page.newsList.label.brief"/>
+        </label>
+        <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+            <s:textarea name="news.brief" label="brief" value="%{news.brief}" rows="5" cols="50"
+                         cssClass="form-control" id="brief-text-input"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="date-text-input" class="col-xs-2 col-sm-2 col-md-1 col-lg-1 col-form-label">
+            <s:text name="page.newsList.label.date"/>
+        </label>
+        <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+            <s:date name="news.date" format="dd/MM/yyyy" var="date"/>
+            <s:textfield name="news.date" label="brief" value="%{date}" rows="5" cols="50"
+                        cssClass="form-control" id="date-text-input"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="content-text-input" class="col-xs-2 col-sm-2 col-md-1 col-lg-1 col-form-label">
+            <s:text name="page.newsList.label.content"/>
+        </label>
+        <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+            <s:textarea name="news.content" label="brief" value="%{news.content}" rows="5" cols="50"
+                         cssClass="form-control" id="content-text-input"/>
+        </div>
+    </div>
 
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 offset-xs-9 offset-sm-9 offset-md-9 offset-lg-9">
         <div class="btn-group" role="group" aria-label="Basic example">
@@ -36,8 +53,6 @@
             <s:submit cssClass="btn btn-success" value="Delete" action="deleteNews"/>
         </div>
     </div>
-
 </s:form>
-
 </body>
 </html>
